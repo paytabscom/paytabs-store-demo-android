@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/navigation_home">
+    <action
+        android:id="@+id/action_navigation_to_bag_fragment"
+        app:destination="@id/navigation_bag"
+        />
+
+    <fragment
+        android:id="@+id/navigation_home"
+        android:name="com.example.paytabs_demo_store_android.home.view.HomeFragment"
+        android:label="fragment_home_page"
+        tools:layout="@layout/fragment_home">
+
+        <action
+            android:id="@+id/action_navigation_home_to_fragment_bag"
+            app:destination="@id/navigation_bag" />
+        <action
+            android:id="@+id/action_navigation_home_to_product_details_fragment"
+            app:destination="@id/navigation_product_details" />
+    </fragment>
+
+
+    <fragment
+        android:id="@+id/navigation_bag"
+        android:name="com.example.paytabs_demo_store_android.bag.view.BagFragment"
+        android:label="fragment_bag"
+        tools:layout="@layout/fragment_bag">
+
+    </fragment>
+
+
+    <fragment
+        android:id="@+id/navigation_product_details"
+        android:name="com.example.paytabs_demo_store_android.product_details.view.ProductDetailsFragment"
+        android:label="fragment_product_details"
+        tools:layout="@layout/fragment_product_details"
+        >
+        <action
+            android:id="@+id/action_product_details_fragment_to_fragment_bag"
+            app:destination="@id/navigation_bag" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_orders"
+        android:name="com.example.paytabs_demo_store_android.orders.view.OrdersFragment"
+        android:label="fragment_orders"
+        tools:layout="@layout/fragment_orders"
+        >
+        <action
+            android:id="@+id/action_orders_fragment_to_fragment_bag"
+            app:destination="@id/navigation_bag" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_products"
+        android:name="com.example.paytabs_demo_store_android.products.view.ProductsFragment"
+        android:label="fragment_product_page"
+        tools:layout="@layout/fragment_product">
+    <action
+        android:id="@+id/action_navigation_Products_to_product_details_fragment"
+        app:destination="@id/navigation_product_details" />
+        <action
+            android:id="@+id/action_products_fragment_to_fragment_bag"
+            app:destination="@id/navigation_bag" />
+
+
+    </fragment>
+    <fragment
+        android:id="@+id/navigation_categories"
+        android:name="com.example.paytabs_demo_store_android.categories.view.CategoriesFragment"
+        android:label="fragment_category"
+        tools:layout="@layout/fragment_category">
+
+        <action
+            android:id="@+id/action_navigation_categories_to_products_fragment"
+            app:destination="@id/navigation_products" />
+        <action
+            android:id="@+id/action_navigation_categories_to_fragment_bag"
+            app:destination="@id/navigation_bag" />
+
+    </fragment>
+    <fragment
+        android:id="@+id/navigation_favourites"
+        android:name="com.example.paytabs_demo_store_android.favourite.view.FavoritesFragment"
+        android:label="fragment_favorites"
+        tools:layout="@layout/fragment_favorites">
+        <action
+            android:id="@+id/action_navigation_favourites_to_fragment_bag"
+            app:destination="@id/navigation_bag" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_profile"
+        android:name="com.example.paytabs_demo_store_android.profile.view.ProfileFragment"
+        android:label="fragment_my_profile"
+        tools:layout="@layout/fragment_profile" >
+        <action
+            android:id="@+id/action_navigation_profile_to_fragment_bag"
+            app:destination="@id/navigation_bag" />
+        <action
+            android:id="@+id/action_navigation_profile_to_orders_bag"
+            app:destination="@id/navigation_orders" />
+    </fragment>
+</navigation>
