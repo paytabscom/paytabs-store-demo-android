@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardCornerRadius="6dp"
+    app:cardBackgroundColor="@android:color/white"
+    android:layout_margin="8dp"
+    app:cardElevation="8dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp">
+
+        <TextView
+            android:id="@+id/tv_state"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:text="State:"
+            android:textSize="14sp"
+            android:padding="3dp"
+            android:textColor="@color/black"
+            />
+        <TextView
+            android:id="@+id/tv_state_Auth"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toEndOf="@id/tv_state"
+            android:text="Authorized"
+            android:textSize="14sp"
+            android:padding="3dp"
+            android:textColor="#4CAF50"
+            />
+
+        <TextView
+            android:id="@+id/tv_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/tv_state"
+            app:layout_constraintStart_toStartOf="parent"
+            android:textSize="14sp"
+            android:padding="3dp"
+            android:text="Ordered by: "
+            android:textColor="@color/black"/>
+
+        <TextView
+            android:id="@+id/tv_billing_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/tv_state_Auth"
+            app:layout_constraintStart_toEndOf="@id/tv_name"
+            android:textSize="14sp"
+            android:padding="3dp"
+            android:textColor="@color/black"
+            />
+
+        <TextView
+            android:id="@+id/tv_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/tv_name"
+            app:layout_constraintStart_toStartOf="parent"
+            android:textSize="14sp"
+            android:padding="3dp"
+            android:text="Date: "
+            android:textColor="@color/black"/>
+
+        <TextView
+            android:id="@+id/tv_time"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toEndOf="@id/tv_date"
+            app:layout_constraintTop_toBottomOf="@id/tv_billing_name"
+            android:textSize="14sp"
+            android:padding="3dp"
+            android:textColor="#454040"/>
+
+        <TextView
+            android:id="@+id/tv_total_price"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/tv_amount"
+            android:textSize="14sp"
+            android:padding="3dp"
+            android:textColor="#3C3939"
+            android:text="Total Price : "/>
+
+        <TextView
+            android:id="@+id/tv_amount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:textSize="14sp"
+            android:padding="3dp"
+            android:textColor="#535151"/>
+
+
+
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+
+</androidx.cardview.widget.CardView>
