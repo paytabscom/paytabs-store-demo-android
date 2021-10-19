@@ -14,8 +14,7 @@ Demo Store app represents a demo eCommerce store: it provides an example of how 
 * Room Database
 
 # Review Demo GIF
-![demo](https://user-images.githubusercontent.com/17852382/137924432-7db18497-cbc7-495e-9118-096e666a778b.gif)
-
+![ezgif com-gif-maker](https://user-images.githubusercontent.com/17852382/137925605-563fdf28-a660-485b-a023-ff7cc09caf74.gif)
 
  
 # App Features
