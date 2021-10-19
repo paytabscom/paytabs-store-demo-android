@@ -14,7 +14,8 @@ Demo Store app represents a demo eCommerce store: it provides an example of how 
 * Room Database
 
 # Review Demo GIF
- ![Review Demo](137710155-cf4cc6b5-9d07-4f31-9c4c-2410e9ca32e8.gif)
+![demo_android](https://user-images.githubusercontent.com/17852382/137922413-c98e6d6f-636a-482f-b9a1-e686e74455bb.gif)
+
  
 # App Features
 
