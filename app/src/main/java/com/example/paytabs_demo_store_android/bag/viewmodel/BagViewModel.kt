@@ -17,6 +17,7 @@ class BagViewModel @Inject constructor(private val repo:BagRepository) :BaseView
     //todo flow
     val bagProducts = MutableLiveData<List<Product>>()
     var bag:List<Product>?=null
+
     fun getBagProducts(){
         viewModelScope.launch {
          bagProducts.value=   repo.getBagProducts()
