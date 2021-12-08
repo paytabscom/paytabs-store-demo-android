@@ -6,7 +6,9 @@ import retrofit2.HttpException
 import java.io.IOException
 import javax.inject.Inject
 
-class ProductsRepository @Inject constructor(private val productsService: ProductsService) {
+class ProductsRepository @Inject constructor(
+    private val productsService: ProductsService
+) {
 
     suspend fun getAllProducts(): ProductResponse {
         return try {
@@ -22,7 +24,7 @@ class ProductsRepository @Inject constructor(private val productsService: Produc
         }
     }
 
-    suspend fun getProductsByCategory(categoryName:String) : ProductResponse {
+    suspend fun getProductsByCategory(categoryName: String): ProductResponse {
         return try {
             val data = productsService.getProductsByCategory(categoryName)
             ProductResponse.Success(data)
@@ -35,6 +37,7 @@ class ProductsRepository @Inject constructor(private val productsService: Produc
 
         }
     }
+
     suspend fun getProductsById() = productsService.getProductsById()
 
 

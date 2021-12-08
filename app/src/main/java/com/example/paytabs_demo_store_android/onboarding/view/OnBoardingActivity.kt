@@ -8,6 +8,8 @@ import android.widget.TextView
 import androidx.viewpager.widget.ViewPager
 import com.example.paytabs_demo_store_android.MainActivity
 import com.example.paytabs_demo_store_android.R
+import com.example.paytabs_demo_store_android.base_classes.hide
+import com.example.paytabs_demo_store_android.base_classes.show
 import com.example.paytabs_demo_store_android.onboarding.config.AppPrefs
 import kotlinx.android.synthetic.main.activity_on_boarding.*
 

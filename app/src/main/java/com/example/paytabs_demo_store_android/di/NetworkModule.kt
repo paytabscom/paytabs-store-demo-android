@@ -61,8 +61,7 @@ object NetworkModule {
         return Room.databaseBuilder(
             appContext,
             PtDatabase::class.java, "pt_database01",
-        ).fallbackToDestructiveMigration().allowMainThreadQueries().build()
-
+        ).fallbackToDestructiveMigration().build()
     }
 
 

@@ -1,63 +1,37 @@
 package com.example.paytabs_demo_store_android.home.view
 
-import android.net.sip.SipSession
 import android.os.Bundle
-import android.view.LayoutInflater
 import android.view.View
-import android.view.ViewGroup
-import android.widget.ImageView
 import android.widget.Toast
 import androidx.core.os.bundleOf
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.ViewModelProvider
+import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import com.example.paytabs_demo_store_android.R
 import com.example.paytabs_demo_store_android.databinding.FragmentHomeBinding
-import com.example.paytabs_demo_store_android.onboarding.view.hide
-import com.example.paytabs_demo_store_android.onboarding.view.shouldShow
-import com.example.paytabs_demo_store_android.products.model.remote.ProductsService
-import com.example.paytabs_demo_store_android.products.model.repo.ProductsRepository
+import com.example.paytabs_demo_store_android.base_classes.shouldShow
 import com.example.paytabs_demo_store_android.products.model.response.Product
 import com.example.paytabs_demo_store_android.products.view.adapter.ProductAdapter
 import com.example.paytabs_demo_store_android.products.viewmodel.ProductsViewModel
-import com.example.paytabs_demo_store_android.products.viewmodel.ProductsViewModelFactory
 import dagger.hilt.android.AndroidEntryPoint
-import kotlinx.android.synthetic.*
-import kotlinx.android.synthetic.main.toolbar.*
 import kotlin.random.Random
+
 @AndroidEntryPoint
 
-class HomeFragment : Fragment() {
+class HomeFragment : Fragment(R.layout.fragment_home) {
 
+    private var _binding: FragmentHomeBinding? = null
+    private val binding
+        get() = _binding!!
+    private val homeViewModel: ProductsViewModel by viewModels()
 
-    private lateinit var binding: FragmentHomeBinding
-
-    private lateinit var homeViewModel: ProductsViewModel
-
-    override fun onCreateView(
-        inflater: LayoutInflater,
-        container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        initViewModel()
-        binding = FragmentHomeBinding.inflate(inflater)
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        _binding = FragmentHomeBinding.bind(view)
         homeViewModel.getAllProducts()
         observeViewModel()
-        return binding.root
     }
-
-
-    private fun initViewModel() {
-        val retrofitService = ProductsService.getInstance()
-        val mainRepository = ProductsRepository(retrofitService)
-
-
-        homeViewModel = ViewModelProvider(this, ProductsViewModelFactory(mainRepository)).get(
-            ProductsViewModel::class.java
-        )
-    }
-
 
     private fun observeViewModel() {
         homeViewModel.productList.observe(viewLifecycleOwner, {

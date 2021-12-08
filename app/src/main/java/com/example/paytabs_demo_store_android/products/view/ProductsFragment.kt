@@ -8,18 +8,12 @@ import android.widget.Toast
 import androidx.core.os.bundleOf
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
-import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
-import androidx.navigation.fragment.navArgs
 import com.example.paytabs_demo_store_android.R
-import com.example.paytabs_demo_store_android.categories.view.adapter.CategoriesAdapter
 import com.example.paytabs_demo_store_android.products.view.adapter.ProductAdapter
 import com.example.paytabs_demo_store_android.databinding.FragmentProductBinding
-import com.example.paytabs_demo_store_android.onboarding.view.shouldShow
-import com.example.paytabs_demo_store_android.products.model.remote.ProductsService
-import com.example.paytabs_demo_store_android.products.model.repo.ProductsRepository
+import com.example.paytabs_demo_store_android.base_classes.shouldShow
 import com.example.paytabs_demo_store_android.products.viewmodel.ProductsViewModel
-import com.example.paytabs_demo_store_android.products.viewmodel.ProductsViewModelFactory
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -38,7 +32,7 @@ class ProductsFragment : Fragment() {
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         binding = FragmentProductBinding.inflate(inflater)
         var category=arguments?.getString("category")
         if (category != null) {

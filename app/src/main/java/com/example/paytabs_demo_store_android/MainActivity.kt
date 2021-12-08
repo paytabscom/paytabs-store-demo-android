@@ -7,6 +7,9 @@ import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.ui.setupWithNavController
+import com.example.paytabs_demo_store_android.base_classes.hide
+import com.example.paytabs_demo_store_android.base_classes.shouldShow
+import com.example.paytabs_demo_store_android.base_classes.show
 import com.example.paytabs_demo_store_android.database.dao.BagDao
 import com.example.paytabs_demo_store_android.databinding.ActivityMainBinding
 import com.example.paytabs_demo_store_android.onboarding.config.AppPrefs
