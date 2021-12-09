@@ -14,6 +14,8 @@
     <string name="profile_title">Profile</string>
     <string name="favourites_title">Favourites</string>
     <string name="categories_title">Categories</string>
+    <string name="back_to_home">Back to home</string>
+    <string name="payment_success">Payment Success</string>
 
 
     <string-array name="Size">
