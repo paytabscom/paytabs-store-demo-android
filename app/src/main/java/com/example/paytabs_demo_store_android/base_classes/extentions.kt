@@ -1,4 +1,4 @@
-package com.example.paytabs_demo_store_android.onboarding.view
+package com.example.paytabs_demo_store_android.base_classes
 
 import android.content.Context
 import android.os.Handler

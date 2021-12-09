@@ -14,6 +14,8 @@
     <string name="profile_title">Profile</string>
     <string name="favourites_title">Favourites</string>
     <string name="categories_title">Categories</string>
+    <string name="back_to_home">Back to home</string>
+    <string name="payment_success">Payment Success</string>
 
 
     <string-array name="Size">
@@ -30,5 +32,25 @@
         <item>White</item>
         <item>Red</item>
     </string-array>
+    <!-- Preference Titles -->
+    <string name="messages_header">Messages</string>
+    <string name="sync_header">Sync</string>
+
+    <!-- Messages Preferences -->
+    <string name="signature_title">Your signature</string>
+    <string name="reply_title">Default reply action</string>
+
+    <!-- Sync Preferences -->
+    <string name="sync_title">Sync email periodically</string>
+    <string name="attachment_title">Download incoming attachments</string>
+    <string name="attachment_summary_on">Automatically download attachments for incoming emails
+    </string>
+    <string name="attachment_summary_off">Only download attachments when manually requested</string>
+    <string name="merchant_server_data">Merchant Server Data</string>
+    <string name="profile_id">Profile ID</string>
+    <string name="server_key">Server Key</string>
+    <string name="client_key">Client Key</string>
+    <string name="currency_code">Currency Code</string>
+    <string name="country_code">Country Code</string>
 
 </resources>

@@ -8,15 +8,12 @@ import android.widget.Toast
 import androidx.core.os.bundleOf
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
-import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import com.example.paytabs_demo_store_android.R
-import com.example.paytabs_demo_store_android.categories.model.remote.CategoriesService
-import com.example.paytabs_demo_store_android.categories.model.repo.CategoriesRepository
 import com.example.paytabs_demo_store_android.categories.view.adapter.CategoriesAdapter
 import com.example.paytabs_demo_store_android.categories.viewmodel.CategoriesViewModel
 import com.example.paytabs_demo_store_android.databinding.FragmentCategoryBinding
-import com.example.paytabs_demo_store_android.onboarding.view.shouldShow
+import com.example.paytabs_demo_store_android.base_classes.shouldShow
 import dagger.hilt.android.AndroidEntryPoint
 
 //higher order function

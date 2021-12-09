@@ -7,10 +7,13 @@ import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.ui.setupWithNavController
+import com.example.paytabs_demo_store_android.base_classes.hide
+import com.example.paytabs_demo_store_android.base_classes.shouldShow
+import com.example.paytabs_demo_store_android.base_classes.show
 import com.example.paytabs_demo_store_android.database.dao.BagDao
 import com.example.paytabs_demo_store_android.databinding.ActivityMainBinding
 import com.example.paytabs_demo_store_android.onboarding.config.AppPrefs
-import com.example.paytabs_demo_store_android.onboarding.view.*
+import com.example.paytabs_demo_store_android.onboarding.view.OnBoardingActivity
 import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
 
@@ -19,7 +22,8 @@ class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
     private lateinit var navController: NavController
 
-    @Inject lateinit var bagDao: BagDao
+    @Inject
+    lateinit var bagDao: BagDao
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -111,8 +115,9 @@ class MainActivity : AppCompatActivity() {
                     navController.navigate(R.id.action_orders_fragment_to_fragment_bag)
                 }
             }
-
-
+        }
+        binding.incToolbar.settingsIcon.setOnClickListener {
+            navController.navigate(R.id.settingsFragment)
         }
     }
 

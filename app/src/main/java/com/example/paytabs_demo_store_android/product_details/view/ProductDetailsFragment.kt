@@ -8,15 +8,10 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
-import androidx.lifecycle.ViewModelProvider
 import com.bumptech.glide.Glide
 import com.example.paytabs_demo_store_android.R
-import com.example.paytabs_demo_store_android.database.enities.toFavouriteEntity
 import com.example.paytabs_demo_store_android.databinding.FragmentProductDetailsBinding
-import com.example.paytabs_demo_store_android.di.DataBaseProvider
-import com.example.paytabs_demo_store_android.onboarding.view.shouldShow
-import com.example.paytabs_demo_store_android.product_details.model.remote.ProductDetailsService
-import com.example.paytabs_demo_store_android.product_details.model.repo.ProductDetailsRepository
+import com.example.paytabs_demo_store_android.base_classes.shouldShow
 import com.example.paytabs_demo_store_android.product_details.viewmodel.ProductDetailsViewModel
 import com.example.paytabs_demo_store_android.products.model.response.Product
 import dagger.hilt.android.AndroidEntryPoint
