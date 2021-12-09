@@ -96,6 +96,24 @@ class BagFragment : Fragment() , CallbackPaymentInterface {
 
     private fun generatePaytabsConfigurationDetails(): PaymentSdkConfigurationDetails {
 
+        val billingData = PaymentSdkBillingDetails(
+            "City",
+            "Eg",
+            "email1@domain.com",
+            "name ",
+            "01210656660", "state",
+            "address street", "11223"
+        )
+
+        val shippingData = PaymentSdkShippingDetails(
+            "City",
+            "Eg",
+            "email1@domain.com",
+            "Khaled",
+            "01210656670", "Cairo",
+            "address street", "12345"
+        )
+
         val configData = PaymentSdkConfigBuilder(
             "74607",
             "S2JNW22GGM-J2BJLKR296-NDW6MR9MHJ",
@@ -109,9 +127,8 @@ class BagFragment : Fragment() , CallbackPaymentInterface {
             .setTransactionType(PaymentSdkTransactionType.SALE)
             .setTransactionClass(PaymentSdkTransactionClass.ECOM)
             .setCartId("12")
-            .setShippingData(PaymentSdkShippingDetails())
-            .showBillingInfo(true)
-            .showShippingInfo(true)
+            .setBillingData(billingData)
+            .setShippingData(shippingData)
             .setScreenTitle("Pay with Card")
 
 

@@ -62,8 +62,7 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
 
     private fun getRandomProducts(size: Int, it: List<Product>): List<Product> {
         val startIndex1 = Random.nextInt(0, it.size - size)
-        val list1 = it.subList(startIndex1, startIndex1 + size)
-        return list1
+        return it.subList(startIndex1, startIndex1 + size)
     }
 
     private fun renderRv(rv: RecyclerView, list: List<Product>) {

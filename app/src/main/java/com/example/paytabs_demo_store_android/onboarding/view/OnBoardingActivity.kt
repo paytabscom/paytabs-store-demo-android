@@ -10,11 +10,12 @@ import com.example.paytabs_demo_store_android.MainActivity
 import com.example.paytabs_demo_store_android.R
 import com.example.paytabs_demo_store_android.base_classes.hide
 import com.example.paytabs_demo_store_android.base_classes.show
+import com.example.paytabs_demo_store_android.databinding.ActivityOnBoardingBinding
 import com.example.paytabs_demo_store_android.onboarding.config.AppPrefs
-import kotlinx.android.synthetic.main.activity_on_boarding.*
 
 class OnBoardingActivity : AppCompatActivity() {
 
+    private lateinit var binding: ActivityOnBoardingBinding
     private lateinit var sliderAdapter: SliderAdapter
     private lateinit var layouts: Array<Int>
     private val sliderChangeListener = object : ViewPager.OnPageChangeListener {
@@ -22,14 +23,16 @@ class OnBoardingActivity : AppCompatActivity() {
         override fun onPageSelected(position: Int) {
             addBottomDots(position)
 
-            if (position == layouts.size.minus(1)) {
-                nextBtn.hide()
-                skipBtn.hide()
-                startBtn.show()
-            } else {
-                nextBtn.show()
-                skipBtn.show()
-                startBtn.hide()
+            binding.apply {
+                if (position == layouts.size.minus(1)) {
+                    nextBtn.hide()
+                    skipBtn.hide()
+                    startBtn.show()
+                } else {
+                    nextBtn.show()
+                    skipBtn.show()
+                    startBtn.hide()
+                }
             }
         }
 
@@ -44,7 +47,8 @@ class OnBoardingActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_on_boarding)
+        binding = ActivityOnBoardingBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
         init()
         dataSet()
@@ -70,32 +74,37 @@ class OnBoardingActivity : AppCompatActivity() {
          * */
         addBottomDots(0)
 
-        slider.apply {
-            adapter = sliderAdapter
-            addOnPageChangeListener(sliderChangeListener)
+        binding.apply {
+            slider.apply {
+                adapter = sliderAdapter
+                addOnPageChangeListener(sliderChangeListener)
+            }
         }
     }
 
     private fun interactions() {
-        skipBtn.setOnClickListener {
-            // Launch login screen
-            navigateToMain()
-        }
-        startBtn.setOnClickListener {
-            // Launch login screen
-            navigateToMain()
-        }
-        nextBtn.setOnClickListener {
-            /**
-             *  Checking for last page, if last page
-             *  login screen will be launched
-             * */
-            val nextItemPosition = getNextItemPosition()
-            if (nextItemPosition < layouts.size) {
+        binding.apply {
+
+            skipBtn.setOnClickListener {
+                // Launch login screen
+                navigateToMain()
+            }
+            startBtn.setOnClickListener {
+                // Launch login screen
+                navigateToMain()
+            }
+            nextBtn.setOnClickListener {
                 /**
-                 * Move to next screen
+                 *  Checking for last page, if last page
+                 *  login screen will be launched
                  * */
-                slider.currentItem = nextItemPosition
+                val nextItemPosition = getNextItemPosition()
+                if (nextItemPosition < layouts.size) {
+                    /**
+                     * Move to next screen
+                     * */
+                    slider.currentItem = nextItemPosition
+                }
             }
         }
     }
@@ -109,13 +118,13 @@ class OnBoardingActivity : AppCompatActivity() {
     private fun addBottomDots(currentPage: Int) {
         val dots: Array<TextView?> = arrayOfNulls(layouts.size)
 
-        dotsLayout.removeAllViews()
+        binding.dotsLayout.removeAllViews()
         for (i in dots.indices) {
             dots[i] = TextView(this)
             dots[i]?.text = Html.fromHtml("&#8226;")
             dots[i]?.textSize = 35f
             dots[i]?.setTextColor(resources.getColor(R.color.Grey))
-            dotsLayout.addView(dots[i])
+            binding.dotsLayout.addView(dots[i])
         }
 
         if (dots.isNotEmpty()) {
@@ -123,6 +132,6 @@ class OnBoardingActivity : AppCompatActivity() {
         }
     }
 
-    private fun getNextItemPosition(): Int = slider.currentItem.plus(+1)
+    private fun getNextItemPosition(): Int = binding.slider.currentItem.plus(+1)
 
 }
